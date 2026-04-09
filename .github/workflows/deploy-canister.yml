@@ -1,0 +1,35 @@
+name: Deploy Canister
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  CANISTER_ID: "mmvz6-g7777-77775-qaacq-cai"
+  IC_URL: "http://icp:4943/"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust + wasm32 target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Build WASM
+        run: cargo build --release --target wasm32-unknown-unknown
+
+      - name: Install icp cli
+        run: |
+          # install icp cli (exact steps TBD)
+
+      - name: Deploy to testnet
+        env:
+          DEPLOY_KEY: ${{ secrets.CANISTER_DEPLOY_KEY }}
+        run: |
+          # reconstruct identity from DEPLOY_KEY
+          # icp cli install code on $CANISTER_ID at $IC_URL
