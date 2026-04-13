@@ -1,7 +1,7 @@
 networks:
   - name: testnet
     mode: connected
-    url: https://ic30.farm.dfinity.systems
+    url: https://a6b6-212-71-125-162.ngrok-free.app
     root-key:  308182301d060d2b0601040182dc7c0503010201060c2b0601040182dc7c05030201036100ac0fe9e12cf5fc692c5abaae84809da470e9eed23a56668ac0e0b684078cbf9f0692289b31f9d015bb98865c738f41e5111deabf4766e04cc31073a771f51d203d3e32d466079b44989cb40e689e6a5feade390498d08966e9de0d536db99004
 
 environments:
