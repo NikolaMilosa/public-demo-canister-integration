@@ -1,0 +1,12 @@
+type Message = record {
+  id : nat;
+  name : text;
+  content : text;
+  timestamp : int;
+  color : nat;
+};
+
+service : {
+  sendMessage : (name : text, content : text) -> (Message);
+  getMessages : (fromId : nat) -> (vec Message) query;
+};

@@ -7,7 +7,15 @@ networks:
 environments:
   - name: staging
     network: testnet
-    canister: [backend, frontend]
+    canisters: [backend, frontend]
+
+  - name: chatbot-staging
+    network: testnet
+    canisters: [chat-backend, chat-frontend]
+
+  - name: chatbot-local
+    network: local
+    canisters: [chat-backend, chat-frontend]
 
 canisters:
   - name: backend
@@ -25,3 +33,19 @@ canisters:
         build:
           - npm install --prefix frontend
           - npm run build --prefix frontend
+
+  - name: chat-backend
+    recipe:
+      type: "@dfinity/motoko@v4.1.0"
+      configuration:
+        main: chat-backend/app.mo
+        candid: chat-backend/chat_backend.did
+
+  - name: chat-frontend
+    recipe:
+      type: "@dfinity/asset-canister@v2.1.0"
+      configuration:
+        dir: chat-frontend/dist
+        build:
+          - npm install --prefix chat-frontend
+          - npm run build --prefix chat-frontend
