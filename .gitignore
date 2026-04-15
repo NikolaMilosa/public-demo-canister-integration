@@ -15,3 +15,4 @@ target/
 .env
 **/frontend/src/bindings/
 **/chat-frontend/src/bindings/
+**/.icp/data/
