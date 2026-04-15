@@ -4,6 +4,12 @@ networks:
     url: https://ic73.farm.dfinity.systems
     root-key: 308182301d060d2b0601040182dc7c0503010201060c2b0601040182dc7c050302010361009396df9df4f147c9ad91876048fc09f21a6b8721214ba53f1505c2dca217493e5fd1b7d0f28a07c72f422d404359f0840283e31099c51f03acd8d7b9f78d4d0fcc210f2128210a9a6354be36a7214645bb24d6a4fbdbfc7f7be9e37a7c77666c
 
+  - name: local
+    mode: managed
+    gateway:
+      domains:
+        - localhost
+
 environments:
   - name: staging
     network: testnet

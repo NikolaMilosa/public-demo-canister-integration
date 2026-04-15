@@ -9,12 +9,12 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   background: #0f0f1a;
   color: #e0e0e0;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
 #root {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100dvh;
   background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
 }
 
@@ -98,7 +98,7 @@ body {
 .chat-screen {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   background: #0f0f1a;
 }
 
@@ -252,4 +252,56 @@ body {
 .input-area button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+
+  .login-card h1 {
+    font-size: 24px;
+  }
+
+  .login-card input {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .login-card button {
+    padding: 12px;
+  }
+
+  .chat-header {
+    padding: 12px 16px;
+  }
+
+  .chat-header h2 {
+    font-size: 16px;
+  }
+
+  .messages-area {
+    padding: 12px 12px;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+
+  .input-area {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .input-area input {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .input-area button {
+    padding: 10px 16px;
+  }
 }
